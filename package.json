@@ -2,8 +2,7 @@
   "name": "race-result-upload",
   "scripts": {
     "dev": "bun run --hot src/index.ts",
-    "compile:mac": "bun build src/index.ts --compile --minify --sourcemap --outfile bin/race-result-upload",
-    "compile:win": "bun build src/index.ts --compile --minify --sourcemap --target=bun-windows-x64-modern --outfile bin/race-result-upload"
+    "compile:win": "bun build src/index.ts --compile --minify --sourcemap --target=bun-windows-x64-baseline --outfile bin/race-result-upload"
   },
   "dependencies": {
     "hono": "^4.6.15"

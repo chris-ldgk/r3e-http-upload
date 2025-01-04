@@ -24,6 +24,13 @@ const { values } = parseArgs({
 
 const app = new Hono()
 
+app.all("/*", async (c) => {
+  console.log(c.req.url)
+  console.log(c.req.method)
+  console.log(await c.req.json());
+  return c.text("Hello World", 200)
+})
+
 app.post("/upload/:server/:file", async (c) => {
   const {server, file} = c.req.param()
   const serverPath = resolve(process.cwd(), "results", server);
